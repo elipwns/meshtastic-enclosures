@@ -10,7 +10,7 @@ Battery (+) ──── Switch IN
 Battery (-) ─────────────────── Heltec JST 1.25 (-)
 ```
 
-The switch mounts in the enclosure wall. Both terminals are accessible from the interior cavity for soldering. Route wires cleanly to avoid pinching when closing the lid.
+The switch press-fits into its cutout in the enclosure wall. After soldering, apply a small dab of hot glue around the base of the switch and over the solder joints. This locks the switch in place and provides strain relief — prevents the wires from flexing at the joint during use.
 
 ---
 

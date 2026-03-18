@@ -57,13 +57,16 @@ Print files are hosted on MakerWorld — see [`bambu/README.md`](bambu/README.md
 ## Assembly
 
 1. Install M3 heat set inserts into the body (4 corners) using a soldering iron
-2. Stick two 12×12mm foam tape pads onto the battery shelf on the floor of the enclosure
-3. Press the LiPo onto the foam tape pads — it should sit flat and secure
-4. Slide the Heltec V3 into the tray; it should sit flush
-5. Route the SMA pigtail through the antenna hole before seating the board
-6. Connect the LiPo to the Heltec's JST port
-7. Wire the power switch in-line with the LiPo positive lead
-8. Close the lid and secure with M3×20mm screws
+2. Press the slide switch into its cutout in the enclosure wall
+3. Solder wires to the switch terminals
+4. Apply a small dab of hot glue around the base of the switch and over the solder joints — this locks the switch in place and provides strain relief for the wires
+5. Stick two 12×12mm foam tape pads onto the battery shelf on the floor of the enclosure
+6. Press the LiPo onto the foam tape pads — it should sit flat and secure
+7. Slide the Heltec V3 into the tray; it should sit flush
+8. Route the SMA pigtail through the antenna hole before seating the board
+9. Connect the LiPo to the Heltec's JST port
+10. Connect the switch wires in-line with the LiPo positive lead
+11. Close the lid and secure with M3×20mm screws
 
 See [`media/`](media/) for build photos.
 

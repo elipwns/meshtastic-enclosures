@@ -25,26 +25,28 @@ See [bom.md](bom.md) for full parts list with links and quantities.
 **Summary:**
 - Heltec WiFi LoRa 32 V3
 - 1000mAh 3.7V LiPo (with JST connector)
-- Latching rocker or push switch (panel mount)
+- Micro mini slide switch (panel mount)
 - SMA pigtail or antenna with SMA connector
 - M3 heat set inserts (×4)
-- M3×8 screws (×4)
-- 3D printed parts (see STLs below)
+- M3×20mm screws (×4)
+- 3D printed parts (see below)
 
 ---
 
 ## Printed Parts
 
-All STLs are in the [`stl/`](stl/) folder.
+Print files are hosted on MakerWorld — see [`bambu/README.md`](bambu/README.md) for the link and print settings.
 
-| File | Material | Notes |
+**MakerWorld listing:** _link coming soon_
+
+
+| Part | Material | Notes |
 |---|---|---|
-| `body.stl` | PETG | Main enclosure shell |
-| `tray-v3.stl` | PETG | Board cradle specific to Heltec V3 |
-| `lid.stl` | PETG | Top cover |
+| `body` | PETG | Main enclosure shell |
+| `tray-v3` | PETG | Board cradle specific to Heltec V3 |
+| `lid` | PETG | Top cover |
 
-
-**Print settings (Bambu Studio / FDM):**
+**Print settings:**
 - Layer height: 0.2mm
 - Walls: 3
 - Infill: 15–20% — gyroid or grid
@@ -61,7 +63,7 @@ All STLs are in the [`stl/`](stl/) folder.
 4. Connect the LiPo to the Heltec's JST port
 5. Wire the power switch in-line with the LiPo positive lead (or use Heltec's onboard switch header if preferred)
 6. Tuck the LiPo flat under or beside the board
-7. Close the lid and secure with M3×8 screws
+7. Close the lid and secure with M3×20mm screws
 
 See [`media/`](media/) for build photos.
 

@@ -1,8 +1,8 @@
 # Meshtastic Enclosures
 
-A library of 3D printed enclosures for Meshtastic nodes, designed for real-world use and built to be published on MakerWorld.
+A library of 3D printed enclosures for Meshtastic nodes, designed for real-world use and published on MakerWorld.
 
-Each configuration is self-contained — BOM, wiring notes, STLs, firmware config, and build photos all in one place.
+Each configuration is self-contained — BOM, wiring notes, firmware config, build photos, and a MakerWorld link for print files all in one place.
 
 ---
 
@@ -25,7 +25,6 @@ Versions follow `MAJOR.MINOR.PATCH`:
 - **Patch** — small fixes, tolerances, print setting tweaks
 
 The enclosure body is designed to be shared across board variants where possible. Switching from a V3 to V4 tray should be a simple swap with no body reprint required.
-
 
 ---
 
@@ -62,10 +61,12 @@ hardware/
     ├── README.md        # Full build guide
     ├── bom.md           # Bill of materials with links
     ├── wiring.md        # Wiring diagrams and notes
-    ├── stl/             # Print-ready STL files
+    ├── bambu/           # Bambu Studio .3mf link + print settings
     ├── firmware/        # Meshtastic config notes
     └── media/           # Photos and assembly shots
 ```
+
+Print files (.3mf) are hosted on MakerWorld, not stored in this repo.
 
 ---
 

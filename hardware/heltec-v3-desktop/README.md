@@ -13,7 +13,7 @@ A simple indoor Meshtastic node designed to sit on a desk. Holds a small LiPo fo
 - Desktop form factor — flat bottom, stable, tidy
 - SMA antenna passthrough on the back/side
 - Latching power switch on the outside
-- 1000mAh LiPo tucked inside for brief power backup
+- 1000mAh LiPo mounted to the floor of the enclosure on foam tape pads
 - Button access holes — the V3 has two buttons (RST and PRG); they're rarely needed in normal operation, so instead of plungers there are small holes you can poke through with a pin, toothpick, or pen
 
 ---
@@ -39,7 +39,6 @@ Print files are hosted on MakerWorld — see [`bambu/README.md`](bambu/README.md
 
 **MakerWorld listing:** _link coming soon_
 
-
 | Part | Material | Notes |
 |---|---|---|
 | `body` | PETG | Main enclosure shell |
@@ -58,12 +57,13 @@ Print files are hosted on MakerWorld — see [`bambu/README.md`](bambu/README.md
 ## Assembly
 
 1. Install M3 heat set inserts into the body (4 corners) using a soldering iron
-2. Slide the Heltec V3 into the tray; it should sit flush
-3. Route the SMA pigtail through the antenna hole before seating the board
-4. Connect the LiPo to the Heltec's JST port
-5. Wire the power switch in-line with the LiPo positive lead (or use Heltec's onboard switch header if preferred)
-6. Tuck the LiPo flat under or beside the board
-7. Close the lid and secure with M3×20mm screws
+2. Stick two 12×12mm foam tape pads onto the battery shelf on the floor of the enclosure
+3. Press the LiPo onto the foam tape pads — it should sit flat and secure
+4. Slide the Heltec V3 into the tray; it should sit flush
+5. Route the SMA pigtail through the antenna hole before seating the board
+6. Connect the LiPo to the Heltec's JST port
+7. Wire the power switch in-line with the LiPo positive lead
+8. Close the lid and secure with M3×20mm screws
 
 See [`media/`](media/) for build photos.
 
@@ -87,7 +87,6 @@ See [`firmware/`](firmware/) for Meshtastic config notes specific to this build.
 Basic setup:
 - Flash Meshtastic firmware for Heltec WiFi LoRa 32 V3 from [meshtastic.org/downloads](https://meshtastic.org/downloads)
 - Connect via Bluetooth or USB to configure channel, region, and role
-- Recommended role: `CLIENT` for a general node, `ROUTER_CLIENT` if it has good line of sight
 
 ---
 

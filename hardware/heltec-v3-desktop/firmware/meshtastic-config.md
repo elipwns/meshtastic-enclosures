@@ -26,7 +26,6 @@ This covers flashing and configuring the Heltec WiFi LoRa 32 V3 for use as a des
 
 Download the Meshtastic app on iOS or Android. Connect via Bluetooth on first boot — the device will appear as `Meshtastic_XXXX`.
 
-
 ### Required settings
 
 | Setting | Recommended Value | Notes |
@@ -37,15 +36,12 @@ Download the Meshtastic app on iOS or Android. Connect via Bluetooth on first bo
 
 ### Node Role
 
-For this desktop enclosure, choose based on placement:
-
 | Role | Use when... |
 |---|---|
 | `CLIENT` | Node is on a desk, used actively, no special placement |
 | `ROUTER_CLIENT` | Node has good line of sight — window, elevated, or roof — helps relay messages |
 | `ROUTER` | Fixed, always-on, not used for direct messaging — pure relay node |
 
-A desktop node near a window is a good candidate for `ROUTER_CLIENT`. It participates in the mesh and helps relay for nearby nodes without requiring you to do anything extra.
 
 ---
 
@@ -58,7 +54,6 @@ Defaults are fine to start. Leave these alone until you understand the mesh in y
 | Modem preset | `LONG_FAST` | Good balance of range and throughput for most use |
 | Transmit power | Max (30 dBm) | Fine for desktop use indoors |
 | Hop limit | 3 | Standard — increase only if your mesh is sparse |
-
 
 ---
 
@@ -91,4 +86,3 @@ If you want a private channel for messaging with specific people:
 - **V3 vs V4 firmware:** Always verify you're flashing the V3 variant — V4 firmware will not work on V3 hardware
 - **Screen on button press:** The PRG button wakes the display — accessible via the button hole in the enclosure
 - **USB-C stays accessible:** The enclosure keeps the USB-C port exposed for firmware updates and serial config without disassembly
-

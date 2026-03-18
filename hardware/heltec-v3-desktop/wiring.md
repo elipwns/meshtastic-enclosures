@@ -1,8 +1,8 @@
-# Wiring — Heltec V3 Handheld
+# Wiring — Heltec V3 Desktop Node
 
 ## Power Switch
 
-The micro slide switch is wired inline on the **battery positive** wire. This cuts all power to the board without requiring a software shutdown.
+The micro mini slide switch is wired inline on the **battery positive** wire. This cuts all power to the board without requiring a software shutdown.
 
 ```
 Battery (+) ──── Switch IN
@@ -10,15 +10,26 @@ Battery (+) ──── Switch IN
 Battery (-) ─────────────────── Heltec JST 1.25 (-)
 ```
 
-**Switch placement:** mounted in a boss on the back face of the enclosure. Terminals are accessible from the interior cavity. Wires route through a slot in the boss into the battery layer.
+The switch mounts in the enclosure wall. Both terminals are accessible from the interior cavity for soldering. Route wires cleanly to avoid pinching when closing the lid.
+
+---
 
 ## Antenna
 
-- u.FL connector is on the end of the V3 board opposite the USB-C port, centered
-- u.FL pigtail routes through the notch in the PCB tray
-- SMA bulkhead mounts in the right wall boss
-- Hex nut seats in the interior hex pocket to prevent spinning during tightening
+- U.FL connector is on the end of the V3 board opposite the USB-C port, centered
+- Route the u.FL pigtail through the notch in the PCB tray before seating the board
+- SMA bulkhead mounts in the 6.6mm hole in the enclosure wall
+- The hex pocket on the interior face seats the SMA nut to prevent spinning during tightening
+- Tighten the SMA bulkhead nut from the outside once the pigtail is connected
+
+---
+
+## Button Access
+
+The V3 has two buttons: **RST** (reset) and **PRG** (program/boot). In normal Meshtastic operation these are rarely needed. The enclosure provides small access holes aligned to each button — use a pin, toothpick, or pen to reach them if required.
+
+---
 
 ## JST Note
 
-Heltec V3 uses **JST 1.25mm 2-pin** connector — not JST-PH (2.0mm). Verify before purchasing batteries or pigtails.
+Heltec V3 uses **JST 1.25mm 2-pin** — not JST-PH (2.0mm). Verify polarity before connecting. Most Heltec-compatible LiPos are wired correctly but always double-check before first power-on.

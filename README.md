@@ -36,10 +36,16 @@ The enclosure body is designed to be shared across board variants where possible
 Same enclosure body as v1.0.0. New tray and lid to accommodate the Heltec WiFi LoRa 32 V4, which has a different footprint, repositioned connectors (battery, solar, GNSS), and a PC faceplate over the OLED. The V4 also adds a dedicated 8-pin GNSS connector — tray design will provide clearance for it even if GPS is not used.
 
 **V4 connector notes for tray design:**
-- Battery and solar use SH1.25-2P connectors (different from V3's JST-1.25) — both on the bottom edge
-- GNSS port is a wide SH1.25-8P connector, also on the bottom edge
-- LoRa U.FL connector position may have shifted — verify before finalizing SMA bulkhead placement
-- V4 uses native USB-OTG (no CP2102 chip) — same USB-C port location but verify offset
+- Battery and solar use SH1.25-2P connectors — both on the bottom edge of the board (awkward placement, acknowledged by Heltec)
+- Wire routing solution: board is positioned 2mm further inward than V3 tray to give wires room to bend up from the bottom-edge connectors without being pinched against the tray wall
+- GNSS port is a wide SH1.25-8P connector, also on the bottom edge — needs clearance in tray floor even if unused
+- LoRa U.FL connector position may have shifted — verify before finalizing SMA bulkhead placement in lid
+- V4 uses native USB-OTG (no CP2102 chip) — USB-C port shifts 2mm inward with board; verify cable reach with multiple cable types before finalizing
+
+**V4 tray design decisions made:**
+- Board inset 2mm further from USB-C wall vs V3 tray — gives wire bend relief for battery/solar connectors
+- Same switch wiring approach as V3: SH1.25-2P connector on battery lead, switch inline on positive wire
+- Do not use header pins for battery — must go through onboard BMS via the dedicated battery connector
 
 ### v1.2.0 — Handheld Series (V3 + V4)
 Vertical handheld form factor, designed to be held in one hand like a radio. Separate body from the desktop series — this is a new major form factor.
@@ -68,7 +74,6 @@ Sealed outdoor enclosures with weatherproofing. The Heltec V4 includes onboard s
 - External solar input / panel mount
 - Larger LiPo capacity
 - Pole or wall mount points
-
 
 ---
 

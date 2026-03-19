@@ -12,7 +12,7 @@ Each configuration is self-contained — BOM, wiring notes, firmware config, bui
 |---|---|---|---|---|
 | [Heltec V3 Desktop Node](hardware/heltec-v3-desktop/) | Heltec WiFi LoRa 32 V3 | 1000mAh LiPo + power switch | v1.0.0 | ✅ Complete |
 | Heltec V4 Desktop Node | Heltec WiFi LoRa 32 V4 | 1000mAh LiPo + power switch | — | 🟡 In progress |
-| Heltec V4 Solar Node | Heltec WiFi LoRa 32 V4 | Solar + large LiPo, outdoor | — | 🔲 Planned |
+| RAK WisBlock Outdoor Solar Node | RAK WisBlock (nRF52) | Solar + 2500mAh LiPo, outdoor | — | 🔲 Planned |
 | Heltec V3 Handheld | Heltec WiFi LoRa 32 V3 | LiPo, portable | — | 🔲 Planned |
 | Heltec V4 Handheld | Heltec WiFi LoRa 32 V4 | LiPo + optional GPS, portable | — | 🔲 Planned |
 | Wireless Tracker — Chevy Bolt EV | Heltec Wireless Tracker (HTIT) | Hardwired 12V → 5V buck converter | — | 🔲 Planned |
@@ -69,12 +69,32 @@ Vertical handheld form factor, designed to be held in one hand like a radio. Sep
 - V4 firmware supports software-controlled GPS power off to save battery
 - GPS integration is a stretch goal for v1 handheld — enclosure should accommodate it but not require it
 
-### v2.x — Outdoor / Solar Series
-Sealed outdoor enclosures with weatherproofing. The Heltec V4 includes onboard solar charging circuitry, making it the natural target board for a solar-capable node. Planned features:
-- IP-rated gasket seal
-- External solar input / panel mount
-- Larger LiPo capacity
-- Pole or wall mount points
+### v2.x — RAK WisBlock Outdoor Solar Node
+Sealed outdoor enclosure for a permanent solar-powered Meshtastic node. Uses a RAK WisBlock nRF52-based board — significantly lower power than ESP32, making it ideal for solar and extended battery deployments.
+
+**Why RAK WisBlock + nRF52 for outdoor/solar:**
+- nRF52 draws a fraction of what ESP32-based boards consume — can run hundreds of hours on battery alone
+- No onboard solar charging on the RAK board — handled externally by dedicated charger hardware
+- Meshtastic officially recommends nRF52-based devices for solar deployments
+
+**Hardware on hand:**
+- RAK WisBlock board (nRF52-based, exact module TBD when board arrives)
+- Adafruit BQ25185 USB/DC/Solar Charger with 5V Boost Board — handles solar charging + outputs regulated 5V
+- 2500mAh 3.7V LiPo — larger capacity suits an always-on outdoor node
+- Solar panel TBD (BQ25185 accepts 5–7V input)
+
+**Power stack:**
+- Solar panel → BQ25185 DC input
+- BQ25185 charges LiPo and outputs regulated 5V → powers RAK board via USB-C
+- BQ25185 also accepts USB for bench charging/testing
+- No power switch — always-on by design
+
+**Enclosure requirements:**
+- IP-rated gasket seal for weatherproofing
+- Solar panel mount or cable passthrough
+- Antenna passthrough (LoRa SMA)
+- Pole, wall, or surface mount points
+- PETG or ASA for UV resistance outdoors
 
 ### v3.x — Vehicle Series — Chevy Bolt EV (Wireless Tracker)
 Permanent hardwired install in a Chevy Bolt EV using the Heltec Wireless Tracker (HTIT-Tracker). GPS is onboard — no external module needed. Always-on node, completely hidden, clean install.
@@ -91,13 +111,13 @@ Permanent hardwired install in a Chevy Bolt EV using the Heltec Wireless Tracker
 
 **Antenna:**
 - Antenna routing TBD pending physical inspection of frunk space
-- Options: external antenna through a grommet, or internal antenna stuck to underside of hood (LoRa and GPS frequencies pass through plastic/fiberglass without issue)
+- Options: external antenna through a grommet, or internal antenna stuck to underside of hood
 - Wireless Tracker has separate U.FL ports for LoRa and GNSS — both can run external antennas if needed
 
 **Notes:**
-- Separate MakerWorld post from desktop/handheld series — different board, different use case
-- Enclosure needs to be compact and mountable inside the frunk
-- No display access required — node runs headless, configured via Meshtastic app over Bluetooth
+- Separate MakerWorld post from desktop/handheld series
+- Node runs headless — configured via Meshtastic app over Bluetooth
+
 
 ---
 
@@ -105,7 +125,7 @@ Permanent hardwired install in a Chevy Bolt EV using the Heltec Wireless Tracker
 
 - **Modular** — main body is shared across board variants; swap tray and lid as needed
 - **Printable on any FDM printer** — no supports required where possible
-- **PETG** for durability and light UV resistance
+- **PETG** for durability and light UV resistance (ASA for outdoor/UV-exposed builds)
 - **M3 heat inserts** for repeatable, reliable assembly
 - **Button access via holes** — buttons are rarely needed; holes allow poking through with a pin or pen rather than dedicating print volume to plungers
 - Designed for real hardware, measured with calipers

@@ -16,13 +16,11 @@ Battery (-) ─────────────────── Heltec JST
 
 The switch press-fits into its cutout in the enclosure wall. After soldering, apply a small dab of hot glue around the base of the switch and over the solder joints. This locks the switch in place and provides strain relief — prevents the wires from flexing at the joint during use.
 
-<!-- TODO: Note exact switch cutout location on V4 body once confirmed -->
-
 ---
 
 ## Antenna
 
-- U.FL connector is on the V4 board <!-- TODO: confirm location relative to USB-C port -->
+- U.FL connector is in the same position as the V3 — opposite end from the USB-C port, centered
 - Route the u.FL pigtail through the notch in the PCB tray before seating the board
 - SMA bulkhead mounts in the 6.6mm hole in the enclosure wall
 - The hex pocket on the interior face seats the SMA nut to prevent spinning during tightening
@@ -38,5 +36,4 @@ The V4 has RST and PRG buttons. In normal Meshtastic operation these are rarely 
 
 ## JST Note
 
-<!-- TODO: Confirm V4 JST connector size before finalizing this section -->
-Verify polarity before connecting. Always double-check before first power-on.
+The Heltec V4 uses **JST 1.25mm 2-pin** — same as the V3. Always double-check polarity before first power-on.

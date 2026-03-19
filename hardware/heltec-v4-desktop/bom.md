@@ -3,7 +3,7 @@
 | Part | Spec | Qty | Notes |
 |---|---|---|---|
 | Heltec WiFi LoRa 32 V4 | 915MHz (US) | 1 | Flash with Meshtastic `heltec-v4` firmware |
-| LiPo battery | 3.7V 1000mAh, 50.7 × 30 × 6.88mm, JST <!-- TODO: confirm V4 JST connector size (1.25mm or 2.0mm) --> | 1 | Same fit as V3 build |
+| LiPo battery | 3.7V 1000mAh, 50.7 × 30 × 6.88mm, JST 1.25mm 2-pin | 1 | Same fit as V3 build |
 | Micro mini slide switch | Panel mount, inline on battery positive | 1 | Cuts all power without software shutdown |
 | SMA bulkhead | SMA female panel mount | 1 | 6.6mm hole, 7.96mm hex nut across flats |
 | u.FL to SMA pigtail | ~100mm | 1 | Routes from board U.FL to bulkhead |
@@ -40,5 +40,4 @@ Any 3.7V LiPo with the correct JST connector will work as long as it fits within
 
 ## JST Note
 
-<!-- TODO: Confirm V4 JST connector size. V3 uses JST 1.25mm 2-pin. V4 may differ — verify before purchasing batteries. -->
-Verify the JST connector size on the V4 before purchasing batteries. Always double-check polarity before first power-on.
+The Heltec V4 uses a **JST 1.25mm 2-pin** connector — same as the V3. Always double-check polarity before first power-on.

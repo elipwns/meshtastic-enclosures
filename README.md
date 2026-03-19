@@ -28,7 +28,6 @@ Versions follow `MAJOR.MINOR.PATCH`:
 
 The enclosure body is designed to be shared across board variants where possible. Switching from a V3 to V4 tray should be a simple swap with no body reprint required.
 
-
 ---
 
 ## Roadmap
@@ -53,15 +52,15 @@ Vertical handheld form factor, designed to be held in one hand like a radio. Sep
 - Larger LiPo than desktop (2000–3000mAh) for all-day use
 - Belt clip or loop mount point
 
-**GPS considerations:**
-- The V3 can use a UART GPS module (e.g. ATGM336H breakout) wired to GPIO pins — VCC, GND, TX, RX
-  - Meshtastic supports this natively; GPIO pin assignment is set in firmware config
-  - GPS patch antenna needs placement near the top of the enclosure with clear plastic above it
-  - GPS adds meaningful utility to a handheld — live position on the Meshtastic mesh map
-- The V4 has a dedicated onboard SH1.25-8P GNSS connector for direct module attachment
-  - Same ATGM336H (or compatible) module, wired to the 8-pin connector instead of GPIO
-  - V4 firmware can also software-control GPS power to save battery
-- GPS integration is a stretch goal for v1 handheld — enclosure should be designed to accommodate it but not require it
+**GPS — handheld only, not planned for desktop series:**
+- Hardware on hand: ATGM336H UART GPS breakout modules with ceramic patch antenna
+- V3 wiring: solder directly to GPIO pins (VCC, GND, TX, RX) — configure pin assignment in Meshtastic firmware
+- V4 wiring: use an SH1.25-8P pigtail cable — connector plugs into the V4's dedicated GNSS port, bare leads solder to the GPS breakout pads; avoids routing wires through the tray and keeps the cradle clean
+  - An SH1.25 connector assortment kit (2P–10P) covers all V4 connectors: 8-pin for GNSS, 2-pin for battery and solar
+  - Search: "SH1.25 cable connector assortment kit" on Amazon (~$10)
+- GPS patch antenna needs a clear plastic window above it — design a shallow pocket in the lid or top of the body
+- V4 firmware supports software-controlled GPS power off to save battery
+- GPS integration is a stretch goal for v1 handheld — enclosure should accommodate it but not require it
 
 ### v2.x — Outdoor / Solar Series
 Sealed outdoor enclosures with weatherproofing. The Heltec V4 includes onboard solar charging circuitry, making it the natural target board for a solar-capable node. Planned features:
@@ -69,6 +68,7 @@ Sealed outdoor enclosures with weatherproofing. The Heltec V4 includes onboard s
 - External solar input / panel mount
 - Larger LiPo capacity
 - Pole or wall mount points
+
 
 ---
 

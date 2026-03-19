@@ -20,3 +20,4 @@
 - Screw length stop in pillar bores
 - Lid underside PCB ribs
 - Heltec V4 tray + lid variant
+- Mirrored body variant (antenna and USB-C on opposite sides) — allows screen to face up in installations where current orientation puts screen upside down

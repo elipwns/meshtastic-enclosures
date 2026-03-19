@@ -15,6 +15,7 @@ Each configuration is self-contained — BOM, wiring notes, firmware config, bui
 | Heltec V4 Solar Node | Heltec WiFi LoRa 32 V4 | Solar + large LiPo, outdoor | — | 🔲 Planned |
 | Heltec V3 Handheld | Heltec WiFi LoRa 32 V3 | LiPo, portable | — | 🔲 Planned |
 | Heltec V4 Handheld | Heltec WiFi LoRa 32 V4 | LiPo + optional GPS, portable | — | 🔲 Planned |
+| Wireless Tracker — Chevy Bolt EV | Heltec Wireless Tracker (HTIT) | Hardwired 12V → 5V buck converter | — | 🔲 Planned |
 
 ---
 
@@ -62,9 +63,8 @@ Vertical handheld form factor, designed to be held in one hand like a radio. Sep
 **GPS — handheld only, not planned for desktop series:**
 - Hardware on hand: ATGM336H UART GPS breakout modules with ceramic patch antenna
 - V3 wiring: solder directly to GPIO pins (VCC, GND, TX, RX) — configure pin assignment in Meshtastic firmware
-- V4 wiring: use an SH1.25-8P pigtail cable — connector plugs into the V4's dedicated GNSS port, bare leads solder to the GPS breakout pads; avoids routing wires through the tray and keeps the cradle clean
-  - An SH1.25 connector assortment kit (2P–10P) covers all V4 connectors: 8-pin for GNSS, 2-pin for battery and solar
-  - Search: "SH1.25 cable connector assortment kit" on Amazon (~$10)
+- V4 wiring: use an SH1.25-8P pigtail cable — connector plugs into the V4's dedicated GNSS port, bare leads solder to the GPS breakout pads
+  - SH1.25 connector assortment kit (2P–10P) covers all V4 connectors — search "SH1.25 cable connector assortment kit" (~$10)
 - GPS patch antenna needs a clear plastic window above it — design a shallow pocket in the lid or top of the body
 - V4 firmware supports software-controlled GPS power off to save battery
 - GPS integration is a stretch goal for v1 handheld — enclosure should accommodate it but not require it
@@ -75,6 +75,29 @@ Sealed outdoor enclosures with weatherproofing. The Heltec V4 includes onboard s
 - External solar input / panel mount
 - Larger LiPo capacity
 - Pole or wall mount points
+
+### v3.x — Vehicle Series — Chevy Bolt EV (Wireless Tracker)
+Permanent hardwired install in a Chevy Bolt EV using the Heltec Wireless Tracker (HTIT-Tracker). GPS is onboard — no external module needed. Always-on node, completely hidden, clean install.
+
+**Power:**
+- Tap directly from the 12V accessory battery with an inline fuse
+- Bolt EV 12V stays topped up automatically by the HV traction battery — effectively always available
+- 12V → 5V buck converter → USB-C into the Wireless Tracker board
+- No switch needed — always-on by design; draw is negligible vs available capacity
+
+**Placement:**
+- Front trunk (frunk) — hidden, no interior clutter, completely invisible install
+- Primary goal: looks like nothing was done to the car
+
+**Antenna:**
+- Antenna routing TBD pending physical inspection of frunk space
+- Options: external antenna through a grommet, or internal antenna stuck to underside of hood (LoRa and GPS frequencies pass through plastic/fiberglass without issue)
+- Wireless Tracker has separate U.FL ports for LoRa and GNSS — both can run external antennas if needed
+
+**Notes:**
+- Separate MakerWorld post from desktop/handheld series — different board, different use case
+- Enclosure needs to be compact and mountable inside the frunk
+- No display access required — node runs headless, configured via Meshtastic app over Bluetooth
 
 ---
 

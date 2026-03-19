@@ -37,7 +37,7 @@ See [bom.md](bom.md) for full parts list with links and quantities.
 
 Print files are hosted on MakerWorld — see [`bambu/README.md`](bambu/README.md) for the link and print settings.
 
-**MakerWorld listing:** _link coming soon_
+**MakerWorld listing:** [Meshtastic Enclosure — Heltec WiFi LoRa 32 V3 Desktop Node](https://makerworld.com/en/models/2542854-meshtastic-enclosure-heltec-wifi-lora-32-v3#profileId-2799773)
 
 | Part | Material | Notes |
 |---|---|---|

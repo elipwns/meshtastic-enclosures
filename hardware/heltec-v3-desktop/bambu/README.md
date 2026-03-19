@@ -4,7 +4,7 @@ Print files are published on MakerWorld, not stored in this repository.
 
 ## Get the Files
 
-**MakerWorld listing:** _link coming soon_
+**MakerWorld listing:** [Meshtastic Enclosure — Heltec WiFi LoRa 32 V3 Desktop Node](https://makerworld.com/en/models/2542854-meshtastic-enclosure-heltec-wifi-lora-32-v3#profileId-2799773)
 
 The MakerWorld listing includes:
 - `.3mf` project file for Bambu Studio — opens with print settings pre-configured

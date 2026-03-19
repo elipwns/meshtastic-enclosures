@@ -5,67 +5,71 @@ Photos are organized by purpose. File names describe content — no timestamp hu
 ---
 
 ## hero/
-Assembled, closed, antenna attached. Clean white backdrop. These are the MakerWorld thumbnail candidates and the first impression shots.
+Assembled, closed, antenna attached. These are the MakerWorld thumbnail candidates.
 
-| File | Description | Quality |
-|---|---|---|
-| `assembled-front-angle.jpg` | Front face, slight angle, white backdrop | ✅ Good |
-| `assembled-rear-angle.jpg` | Rear/top angle, white backdrop | ✅ Hero shot |
-
-**Reshoot on second build:**
-- Same shots in second color (PLA) for the PLA print profile on MakerWorld
-- Try a straight-on front shot with screen lit up
+| File | Color | Description | Quality |
+|---|---|---|---|
+| `assembled-front-angle.jpg` | Green PETG | Front face, slight angle, white backdrop | ✅ Good |
+| `assembled-rear-angle.jpg` | Green PETG | Rear/top angle, white backdrop | ✅ Hero shot |
+| `pla-assembled-front.jpg` | Red PLA | Front face, white backdrop | ✅ Good |
+| `pla-assembled-angle.jpg` | Red PLA | Side angle showing SMA and switch hole | ✅ Good |
 
 ---
 
 ## detail/
-Close-ups of specific design features. One shot per feature, clearly named.
+Close-ups of specific design features.
 
 | File | Description | Quality |
 |---|---|---|
-| `sma-bulkhead-exterior.jpg` | SMA bulkhead and antenna connection from outside | ✅ Good |
+| `sma-bulkhead-exterior.jpg` | SMA bulkhead and antenna from outside | ✅ Good |
 | `usb-c-port-exterior.jpg` | USB-C port side, cable plugged in | ✅ Good |
-| `sma-bulkhead-interior.jpg` | SMA nut seated in hex pocket, interior view | ✅ Good |
+| `sma-bulkhead-interior.jpg` | SMA nut seated in hex pocket, interior | ✅ Good |
 
-**Missing — reshoot on second build:**
-- `power-switch-exterior.jpg` — switch flush in wall cutout, from outside
-- `power-switch-interior.jpg` — hot glue dab on switch terminals, from inside
-- `button-holes.jpg` — RST and PRG access holes, something poked through
+**Missing — reshoot on next build:**
+- `power-switch-exterior.jpg` — switch flush in wall, from outside
+- `button-holes.jpg` — RST and PRG access holes with something poked through
+
 
 ---
 
 ## assembly/
-Step-by-step build photos. Ordered to match assembly steps in README.
+Step-by-step build photos, organized by build session.
 
-| File | Assembly step | Quality |
+### assembly/pla-build/
+Complete PLA build sequence — red PLA, 2000mAh battery. Numbered to match assembly steps.
+
+| File | Assembly step | Notes |
 |---|---|---|
-| `tray-side-profile.jpg` | Tray alone — shows cradle geometry | ✅ Good |
-| `tray-front-board-visible.jpg` | Board seated in tray, front face | ✅ Good |
-| `tray-rear-pcb-visible.jpg` | Board seated in tray, rear PCB visible | ✅ Good |
-| `battery-wiring-top-down.jpg` | Battery in body, wiring visible, top down | ✅ Good |
-| `battery-wiring-angled.jpg` | Battery and wiring, angled view | ✅ Good |
-| `internals-open.jpg` | Everything assembled, lid partially off | ✅ Good |
-| `lid-off-board-seated.jpg` | Lid off, board in tray, parts laid out | ✅ Good |
+| `01-body-interior-top-down.jpg` | Body fresh off printer, interior view | Shows foam tape shelf pockets |
+| `02-heat-insert-kit.jpg` | Heat insert kit (Kadrick M2–M5 520pc) | Good for BOM reference |
+| `03-heat-insert-prep.jpg` | Soldering iron at 205°C, insert ready | Shows temp and insert size |
+| `04-heat-insert-install.jpg` | Iron tip on insert, sinking into corner pillar | Key "how to" shot |
+| `05-heat-inserts-complete.jpg` | All 4 inserts seated, top-down | ✅ Complete step |
+| `06-foam-tape-pads-detail.jpg` | Two foam pads next to body | Shows pad size |
+| `07-foam-tape-installed.jpg` | Pads stuck to battery shelf | ✅ Before battery goes in |
+| `08-battery-connector-and-switch.jpg` | LiPo pigtail and micro slide switch | Parts reference |
+| `09-sma-hardware.jpg` | SMA pigtail, bulkhead, nut and washer | Parts reference |
+| `10-sma-installed-pads-ready.jpg` | SMA bulkhead in wall, pigtail routed, pads ready | Good sequence shot |
+| `11-lipo-switch-wired.jpg` | LiPo with switch wired inline, connector at end | ✅ Wiring reference |
+| `12-switch-installed-hot-glue.jpg` | Switch in cutout, hot glue on terminals | ✅ Critical detail shot |
+| `13-battery-seating.jpg` | Side view, battery going in, switch hole visible | Good context shot |
+| `14-battery-seated-top-down.jpg` | 2000mAh battery seated flat, wiring visible | ✅ Top-down internals |
+| `15-pre-board-install.jpg` | Body wired up, board sitting beside ready to drop in | Good "before" shot |
+| `16-board-seated-lid-off.jpg` | Board in tray, SMA connected, lid off | ✅ Key assembly shot |
 
-**Missing — reshoot on second build:**
-- `heat-inserts.jpg` — iron tip on insert sinking into corner pillar
-- `foam-tape-pads.jpg` — two pads stuck to battery shelf before battery goes in
-- `lipo-on-pads.jpg` — battery pressed onto foam tape, seated flat
-- `ufl-pigtail-routed.jpg` — pigtail routed through tray notch before board seated
-- `hot-glue-switch.jpg` — dab of hot glue on switch terminals
+### assembly/ (green PETG build — first build)
+See `assembly/` root for V3 green PETG build shots (less complete, no step-by-step).
 
 ---
 
 ## powered/
-Node running, screen lit. Proves it works.
+Node running, screen or LED lit.
 
-| File | Description | Quality |
-|---|---|---|
-| `screen-on-front.jpg` | Screen lit, front face flat, "2 online" visible | ✅ Great |
-| `screen-on-angle.jpg` | Screen lit, full enclosure visible, antenna in frame | ✅ Great |
-
-**Nice to have on second build:**
-- Meshtastic app on phone in background, node showing as connected
+| File | Color | Description | Quality |
+|---|---|---|---|
+| `screen-on-front.jpg` | Green PETG | Screen lit, "2 online" visible | ✅ Great |
+| `screen-on-angle.jpg` | Green PETG | Full enclosure, antenna in frame | ✅ Great |
+| `pla-powered-on-led-glow.jpg` | Red PLA | Orange LED glowing through PLA body | ✅ Stunning — use as PLA profile thumbnail |
 
 ---
 
@@ -74,4 +78,5 @@ Original bulk upload kept for reference. Not linked from the build guide.
 
 | File | Notes |
 |---|---|
-| `first-build-cat-toy.jpg` | First assembled shot, informal, cat tree in background |
+| `first-build-cat-toy.jpg` | First assembled shot, informal |
+

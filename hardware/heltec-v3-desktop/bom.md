@@ -3,7 +3,7 @@
 | Part | Spec | Qty | Notes |
 |---|---|---|---|
 | Heltec WiFi LoRa 32 V3 | 915MHz (US) | 1 | Flash with Meshtastic `heltec-v3` firmware |
-| LiPo battery | 3.7V 1000mAh, 50.7 × 30 × 6.88mm, JST 1.25 | 1 | Liter Energy 703048 or equivalent |
+| LiPo battery | 3.7V 1000mAh, 50.7 × 30 × 6.88mm, JST 1.25 | 1 | Liter Energy 703048 — see battery note below |
 | Micro mini slide switch | Panel mount, inline on battery positive | 1 | Cuts all power without software shutdown |
 | SMA bulkhead | SMA female panel mount | 1 | 6.6mm hole, 7.96mm hex nut across flats |
 | u.FL to SMA pigtail | ~100mm | 1 | Routes from board U.FL to bulkhead |
@@ -14,10 +14,21 @@
 
 ---
 
+## Battery Note
+
+The enclosure is designed around the **1000mAh Liter Energy 703048** (50.7 × 30 × 6.88mm). This fits with comfortable clearance.
+
+A **2000mAh battery** (e.g. JLJLUP LP103450, ~100 × 34 × 10mm) also fits — it's a tighter install but works. The lid closes cleanly. If you have 2000mAh cells on hand, go for it — more runtime for the same footprint.
+
+Any 3.7V LiPo with a JST 1.25mm 2-pin connector will work as long as it fits within the battery shelf dimensions.
+
+---
+
 ## Where to Buy
 
 - **Heltec V3:** [heltec.org](https://heltec.org) or AliExpress — search "Heltec WiFi LoRa 32 V3"
-- **LiPo battery:** Amazon — search "Liter Energy 703048" or "1000mAh 3.7V JST 1.25"
+- **LiPo battery (1000mAh):** Amazon — search "Liter Energy 703048" or "1000mAh 3.7V JST 1.25"
+- **LiPo battery (2000mAh):** Amazon — search "JLJLUP LP103450 2000mAh" or "2000mAh 3.7V JST 1.25"
 - **Slide switch:** Amazon or AliExpress — search "micro mini slide switch panel mount"
 - **SMA bulkhead:** Amazon or AliExpress — search "SMA female panel mount bulkhead"
 - **u.FL pigtail:** Amazon — search "u.FL to SMA pigtail 100mm"

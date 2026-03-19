@@ -12,10 +12,11 @@ Each configuration is self-contained — BOM, wiring notes, firmware config, bui
 |---|---|---|---|---|
 | [Heltec V3 Desktop Node](hardware/heltec-v3-desktop/) | Heltec WiFi LoRa 32 V3 | 1000mAh LiPo + power switch | v1.0.0 | ✅ Complete |
 | Heltec V4 Desktop Node | Heltec WiFi LoRa 32 V4 | 1000mAh LiPo + power switch | — | 🟡 In progress |
-| RAK WisBlock Outdoor Solar Node | RAK WisBlock (nRF52) | Solar + 2500mAh LiPo, outdoor | — | 🔲 Planned |
+| RAK3401 Outdoor Solar Node | RAK WisBlock RAK3401 (nRF52 + 1W) | Solar + 2500mAh LiPo, outdoor | — | 🔲 Planned |
 | Heltec V3 Handheld | Heltec WiFi LoRa 32 V3 | LiPo, portable | — | 🔲 Planned |
 | Heltec V4 Handheld | Heltec WiFi LoRa 32 V4 | LiPo + optional GPS, portable | — | 🔲 Planned |
 | Wireless Tracker — Chevy Bolt EV | Heltec Wireless Tracker (HTIT) | Hardwired 12V → 5V buck converter | — | 🔲 Planned |
+
 
 ---
 
@@ -69,32 +70,40 @@ Vertical handheld form factor, designed to be held in one hand like a radio. Sep
 - V4 firmware supports software-controlled GPS power off to save battery
 - GPS integration is a stretch goal for v1 handheld — enclosure should accommodate it but not require it
 
-### v2.x — RAK WisBlock Outdoor Solar Node
-Sealed outdoor enclosure for a permanent solar-powered Meshtastic node. Uses a RAK WisBlock nRF52-based board — significantly lower power than ESP32, making it ideal for solar and extended battery deployments.
+### v2.x — RAK3401 Outdoor Solar Node
+High-power fixed outdoor node using the RAK WisBlock RAK3401 — nRF52840 MCU with SX1262 + SKY66122 PA for 1W (30dBm) LoRa output. Designed as a backbone relay node with maximum range.
 
-**Why RAK WisBlock + nRF52 for outdoor/solar:**
-- nRF52 draws a fraction of what ESP32-based boards consume — can run hundreds of hours on battery alone
-- No onboard solar charging on the RAK board — handled externally by dedicated charger hardware
-- Meshtastic officially recommends nRF52-based devices for solar deployments
+**Why this combination:**
+- RAK3401 at 1W is legal in the US (US915) and significantly outranges standard 22dBm boards
+- nRF52840 is ultra-low power between transmits — ideal for solar since the radio sleeps deeply
+- Yagi antenna adds 9–13dBi of directional gain on top of the 1W transmit power — this node will cover many miles as a relay
+- Fixed outdoor install means no need for a display or buttons — fully headless, configured via Bluetooth
 
 **Hardware on hand:**
-- RAK WisBlock board (nRF52-based, exact module TBD when board arrives)
-- Adafruit BQ25185 USB/DC/Solar Charger with 5V Boost Board — handles solar charging + outputs regulated 5V
-- 2500mAh 3.7V LiPo — larger capacity suits an always-on outdoor node
+- RAK3401 WisBlock module (nRF52840 + SX1262 + SKY66122 1W PA)
+- Adafruit BQ25185 USB/DC/Solar Charger with 5V Boost Board
+- 2500mAh 3.7V LiPo
+- 915MHz Yagi antenna (high gain directional, TBD exact model)
 - Solar panel TBD (BQ25185 accepts 5–7V input)
 
 **Power stack:**
-- Solar panel → BQ25185 DC input
-- BQ25185 charges LiPo and outputs regulated 5V → powers RAK board via USB-C
-- BQ25185 also accepts USB for bench charging/testing
-- No power switch — always-on by design
+- Solar panel → BQ25185 DC input (5–7V)
+- BQ25185 charges LiPo and outputs regulated 5V → powers RAK3401 baseboard via USB-C
+- BQ25185 outputs up to 1A — sufficient for RAK3401 at 1W TX (peak ~2–3W DC draw, brief bursts)
+- No power switch — always-on
+
+**Antenna:**
+- Yagi is external and directional — no SMA bulkhead on the enclosure
+- Coax run from Yagi (N-type or SMA) into the enclosure via weatherproof cable gland or bulkhead
+- Enclosure placement can be near the Yagi (rooftop/mast) or inside with a longer coax run
+- Aim the Yagi toward the area you want to cover / toward other nodes
 
 **Enclosure requirements:**
 - IP-rated gasket seal for weatherproofing
-- Solar panel mount or cable passthrough
-- Antenna passthrough (LoRa SMA)
-- Pole, wall, or surface mount points
-- PETG or ASA for UV resistance outdoors
+- Weatherproof cable entry for coax and solar panel wires
+- Pole or mast mount points
+- PETG or ASA for UV resistance — ASA preferred for prolonged outdoor exposure
+- No display cutout needed — fully headless node
 
 ### v3.x — Vehicle Series — Chevy Bolt EV (Wireless Tracker)
 Permanent hardwired install in a Chevy Bolt EV using the Heltec Wireless Tracker (HTIT-Tracker). GPS is onboard — no external module needed. Always-on node, completely hidden, clean install.
@@ -117,7 +126,6 @@ Permanent hardwired install in a Chevy Bolt EV using the Heltec Wireless Tracker
 **Notes:**
 - Separate MakerWorld post from desktop/handheld series
 - Node runs headless — configured via Meshtastic app over Bluetooth
-
 
 ---
 

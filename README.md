@@ -44,6 +44,7 @@ Same enclosure body as v1.0.0. New tray and lid to accommodate the Heltec WiFi L
 
 **V4 tray design decisions made:**
 - Board inset 2mm further from USB-C wall vs V3 tray — gives wire bend relief for battery/solar connectors
+- No underside component relief cutout needed — V4 PCB underside is clean, unlike V3 which required a cutout for surface mount components
 - Same switch wiring approach as V3: SH1.25-2P connector on battery lead, switch inline on positive wire
 - Do not use header pins for battery — must go through onboard BMS via the dedicated battery connector
 

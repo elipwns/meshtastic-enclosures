@@ -17,7 +17,6 @@ Each configuration is self-contained — BOM, wiring notes, firmware config, bui
 | Heltec V4 Handheld | Heltec WiFi LoRa 32 V4 | LiPo + optional GPS, portable | — | 🔲 Planned |
 | Wireless Tracker — Chevy Bolt EV | Heltec Wireless Tracker (HTIT) | Hardwired 12V → 5V buck converter | — | 🔲 Planned |
 
-
 ---
 
 ## Versioning
@@ -76,14 +75,14 @@ High-power fixed outdoor node using the RAK WisBlock RAK3401 — nRF52840 MCU wi
 **Why this combination:**
 - RAK3401 at 1W is legal in the US (US915) and significantly outranges standard 22dBm boards
 - nRF52840 is ultra-low power between transmits — ideal for solar since the radio sleeps deeply
-- Yagi antenna adds 9–13dBi of directional gain on top of the 1W transmit power — this node will cover many miles as a relay
-- Fixed outdoor install means no need for a display or buttons — fully headless, configured via Bluetooth
+- High-gain omni antenna covers all directions — right choice for a relay node that needs to hear and reach nodes from everywhere
+- Fixed outdoor install — fully headless, configured via Bluetooth
 
 **Hardware on hand:**
 - RAK3401 WisBlock module (nRF52840 + SX1262 + SKY66122 1W PA)
 - Adafruit BQ25185 USB/DC/Solar Charger with 5V Boost Board
 - 2500mAh 3.7V LiPo
-- 915MHz Yagi antenna (high gain directional, TBD exact model)
+- 915MHz high-gain omni antenna (TBD exact model and gain)
 - Solar panel TBD (BQ25185 accepts 5–7V input)
 
 **Power stack:**
@@ -93,17 +92,16 @@ High-power fixed outdoor node using the RAK WisBlock RAK3401 — nRF52840 MCU wi
 - No power switch — always-on
 
 **Antenna:**
-- Yagi is external and directional — no SMA bulkhead on the enclosure
-- Coax run from Yagi (N-type or SMA) into the enclosure via weatherproof cable gland or bulkhead
-- Enclosure placement can be near the Yagi (rooftop/mast) or inside with a longer coax run
-- Aim the Yagi toward the area you want to cover / toward other nodes
+- High-gain omni — external, mounted separately (pole, mast, rooftop)
+- Coax run from antenna into enclosure via weatherproof cable gland
+- Omni pattern covers all directions — correct for a relay node vs a directional antenna
 
 **Enclosure requirements:**
 - IP-rated gasket seal for weatherproofing
-- Weatherproof cable entry for coax and solar panel wires
+- Weatherproof cable entry for coax and solar wires
 - Pole or mast mount points
-- PETG or ASA for UV resistance — ASA preferred for prolonged outdoor exposure
-- No display cutout needed — fully headless node
+- PETG or ASA — ASA preferred for prolonged outdoor UV exposure
+- No display cutout — fully headless node
 
 ### v3.x — Vehicle Series — Chevy Bolt EV (Wireless Tracker)
 Permanent hardwired install in a Chevy Bolt EV using the Heltec Wireless Tracker (HTIT-Tracker). GPS is onboard — no external module needed. Always-on node, completely hidden, clean install.

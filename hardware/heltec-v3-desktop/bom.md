@@ -18,9 +18,9 @@
 
 The enclosure is designed around the **1000mAh Liter Energy 703048** (50.7 × 30 × 6.88mm). This fits with comfortable clearance.
 
-A **2000mAh battery** (e.g. JLJLUP LP103450, ~100 × 34 × 10mm) also fits — it's a tighter install but works. The lid closes cleanly. If you have 2000mAh cells on hand, go for it — more runtime for the same footprint.
+A **2000mAh battery** (e.g. JLJLUP LP103450, ~100 × 34 × 10mm) also fits physically — tighter install but the lid closes cleanly. **Watch the connector:** many 2000mAh cells ship with a JST 2.0mm (JST-PH) plug, which is too large for the Heltec V3's JST 1.25mm port. You'll need to either source one pre-terminated with JST 1.25mm, or cut the connector and solder on the correct one. Stick with 1000mAh if you want a drop-in install.
 
-Any 3.7V LiPo with a JST 1.25mm 2-pin connector will work as long as it fits within the battery shelf dimensions.
+Any 3.7V LiPo with a JST 1.25mm 2-pin connector will work as long as it fits within the battery shelf dimensions. 3000mAh cells are generally too large — verify dimensions before buying.
 
 ---
 

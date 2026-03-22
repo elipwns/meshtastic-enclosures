@@ -49,6 +49,14 @@ Same enclosure body as v1.0.0. New tray and lid to accommodate the Heltec WiFi L
 - Same switch wiring approach as V3: SH1.25-2P connector on battery lead, switch inline on positive wire
 - Do not use header pins for battery — must go through onboard BMS via the dedicated battery connector
 
+### v1.1.x — Tray Labels + Logo
+- Debossed `V3` / `V4` text on top face of each tray for at-a-glance identification on the workbench
+- Personal maker logo debossed on tray or body — logo design TBD, will be used across all future builds
+- Minimum feature size constraint: ~0.8mm width at 0.2mm layer height — test print logo candidate before committing to final geometry
+
+### v1.1.x — Desktop Mirrored Variant
+Mirrored version of the desktop body with antenna exit and USB-C slot swapped to opposite sides. Useful when the physical installation location forces the current orientation to put the screen upside down. Easy Onshape mirror operation — no structural changes.
+
 ### v1.2.0 — Handheld Series (V3 + V4)
 Vertical handheld form factor, designed to be held in one hand like a radio. Separate body from the desktop series — this is a new major form factor.
 
